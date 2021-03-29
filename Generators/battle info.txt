@@ -1,0 +1,70 @@
+random classes:
+BRUTE-stong, powerful, but slow, takes an extra move for powerful attacks
+MAGE-can use magic and potions, most attacks require AP
+NINJA-smokebombs, swords, shruken, stealth, quick but low HP
+SWORDSMAN-sword based attacks, can charge for lunges, block and at max AP can dual weild
+SNIPER-ranged attacks, fast, uses stealth
+SHADOW-stealth, sets traps, 
+
+
+
+Variables:
+stealth (%)
+Attack Power (%)
+Enemy Health/Health
+damage/defence
+ammunition/durability (optional)
+critical hit, small chance to do 2-5 extra damage
+random drops and loot
+
+
+
+Possible extensions:
+money/xp based item shop
+save files
+increasing difficulty
+gamemodes-survivor/fewest moves/boss battle/multiplayer vs/multiplayer co-op
+customizable character/weapons/attacks
+chain attacks/combos
+teams/parties/npcs
+
+se hp=100
+:start
+
+echo             ()  %ehb%
+echo     __      \/
+echo    /  \     /\
+echo    \__/     
+echo   __[]__
+echo     []
+echo     []
+echo     /\    %hb%
+echo    /  \
+
+if %hp%==100 set hb=[][][][][]
+if %hp% LEQ 90 set hb=[][][][][
+if %hp% LEQ 80 set hb=[][][][]
+if %hp% LEQ 70 set hb=[][][][
+if %hp% LEQ 60 set hb=[][][]
+if %hp% LEQ 50 set hb=[][][
+if %hp% LEQ 40 set hb=[][]
+if %hp% LEQ 30 set hb=[][
+if %hp% LEQ 20 set hb=[]
+if %hp% LEQ 10 set hb=[
+if %hp% LEQ 0 goto lose
+
+
+if %ehp%==100 set ehb=[][][][][]
+if %ehp% LEQ 90 set ehb=[][][][][
+if %ehp% LEQ 80 set ehb=[][][][]
+if %ehp% LEQ 70 set ehb=[][][][
+if %ehp% LEQ 60 set ehb=[][][]
+if %ehp% LEQ 50 set ehb=[][][
+if %ehp% LEQ 40 set ehb=[][]
+if %ehp% LEQ 30 set ehb=[][
+if %ehp% LEQ 20 set ehb=[]
+if %ehp% LEQ 10 set ehb=[
+if %ehp% LEQ 0 goto win
+
+set /a hp==%hp%-10
+goto start

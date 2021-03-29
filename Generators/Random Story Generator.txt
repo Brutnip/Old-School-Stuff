@@ -1,0 +1,46 @@
+into (main character)
+
+set module=0
+set number of modules (length of story 1-5)
+
+module1 (setting context, decides where to start, set %location%)
+
+body1 (wonders around %location%, simple pointless things)
+
+module2 (explore/develop setting)
+
+body2 (begins doing stuff)
+
+module3 (
+
+Conclusion (stand against enemy/twist ending)
+
+
+
+intro > setting > explore > build up/figting > challenge/find enemy > get to enemy > conclusion
+
+
+
+
+======module example layout=======
+
+set /a module=%module%+1
+:module%module%
+
+echo *event*
+echo Do you: A) *option 1* B) *option 2* or C) *option3*
+set /p choice%module%=
+if choice%module%==A goto %module%A
+if choice%module%==B goto %module%B
+if choice%module%==C goto %module%C
+echo that was not and option
+pause
+goto module%module%
+
+:%module%A
+
+
+:%module%B
+
+
+:%module%C
